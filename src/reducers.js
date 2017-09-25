@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux'
 import {
-  GOT_LIST,
+  ADD_ITEM,
 } from './actions'
 
 function imagesList(state = [], action){
   switch(action.type) {
-    case GOT_LIST: 
+    case ADD_ITEM: 
       return [
         ...state,
         {
           text: action.text,
-          completed: true
+          completed: false
         }
       ]
     

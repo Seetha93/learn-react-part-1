@@ -1,10 +1,9 @@
-export const GET_LIST = 'GET_LIST'
-export const GOT_LIST = 'GOT_LIST'
+export const ADD_ITEM = 'ADD_ITEM'
 
 /*
  * action creators
  */
 
-export function gotList(text) {
-  return { type: GOT_LIST, text }
+export function addToList(text) {
+  return { type: ADD_ITEM, text }
 }

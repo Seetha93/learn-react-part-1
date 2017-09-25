@@ -5,7 +5,7 @@ import axios from 'axios';
 import { createStore } from 'redux'
 import imageListApp from './reducers'
 import {
-  gotList,
+  addToList,
 } from './actions'
 
 
@@ -27,8 +27,7 @@ class App extends Component {
       console.log(res)
       if(res.status == 200)
       {
-        store.dispatch(gotList(res.status.toString()))
-        //store.gotList('res.data')
+        store.dispatch(addToList(res.status.toString()))
         this.setState({
           imagesList : res.data,
           showComponent : true
