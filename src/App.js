@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import { createStore } from 'redux'
+import imageListApp from './reducers'
+import {
+  gotList,
+} from './actions'
+
+
+let store = createStore(imageListApp); 
 
 class App extends Component {
   constructor() {
@@ -19,8 +27,10 @@ class App extends Component {
       console.log(res)
       if(res.status == 200)
       {
-        this.state.imagesList =  res.data
+        store.dispatch(gotList(res.status.toString()))
+        //store.gotList('res.data')
         this.setState({
+          imagesList : res.data,
           showComponent : true
         })
       }
